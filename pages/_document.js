@@ -6,14 +6,14 @@ const themeScript = `
 
   function changeTheme(inputTheme) {
     if (inputTheme === "dark") {
-      const theme = themeConfig.dark;
-      for (let key in theme) {
+      var theme = themeConfig.dark;
+      for (var key in theme) {
         setCSSVar(key, theme[key]);
       }
       localStorage.setItem("theme", inputTheme);
     } else {
-      const theme = themeConfig.light;
-      for (let key in theme) {
+      var theme = themeConfig.light;
+      for (var key in theme) {
         setCSSVar(key, theme[key]);
       }
       localStorage.setItem("theme", inputTheme);
@@ -45,7 +45,7 @@ const themeScript = `
 
     changeTheme(currentTheme);
   } catch (err) {
-    console.log(new Error("accessing theme has been denied"));
+    console.log(err);
   }
 })();
 `;
